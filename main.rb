@@ -16,7 +16,7 @@ x = 0
 game.print_grid
 begin
     # cycles between player 1 and player 2
-    print "Player #{player_array[x].number} enter grid position for next move: "
+    print "Player #{player_array[x].number} enter grid position for next move (0-8): "
     move = gets.to_i
     game[move] = player_array[x].icon
     x = (x+1) % 2
