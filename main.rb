@@ -10,11 +10,16 @@ something = Grid.new
     player = Player.new(i,symbol)
     player_array << player
 end
-something.print_grid
+
 x = 0
-(0...7).each do |i|
+
+something.print_grid
+begin
     # cycles between player 1 and player 2
-    print "Player #{player_array[x].number} next move: \n"
+    print "Player #{player_array[x].number} next move: "
+    move = gets.to_i
+    something[move] = player_array[x].icon
     x = (x+1) % 2
-end
-p player_array
+    something.print_grid
+end while !something.game_end?
+puts "Player #{x} wins!"

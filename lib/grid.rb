@@ -27,9 +27,14 @@ class Grid
   def game_end?
     @wins.each do |a, b, c|
       if @grid[a] == @grid[b] && @grid[b] == @grid[c]
-        return @grid[a]
+        return true
       end
     end
     false
   end
+
+  def []=(index, icon)
+    @grid[index] = icon
+  end
+
 end
