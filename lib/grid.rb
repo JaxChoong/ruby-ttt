@@ -37,4 +37,7 @@ class Grid
     @grid[index] = icon
   end
 
+  def valid_move?(pos,icon)
+    @grid[pos] == "." ? true : false
+  end
 end
