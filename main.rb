@@ -22,4 +22,4 @@ begin
     x = (x+1) % 2
     game.print_grid
 end while !game.game_end?
-puts "Player #{x} wins!"
+puts "Player #{player_array[x-1].number} wins!"
