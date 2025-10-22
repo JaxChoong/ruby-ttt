@@ -2,14 +2,18 @@ require_relative "lib/grid"
 require_relative "lib/player"
 
 player_array = []
+symbols = %w[X O]
 game = Grid.new
-(1..2).each do |i|
-  # get player 1 and 2's icons
-  print("Player #{i} Select Icon: 'X' or 'O': ")
+# get player 1 and 2's icons
+print("Player 1 Select Icon: 'X' or 'O': ")
+symbol = gets.chomp.upcase
+until symbols.include?(symbol)
+  puts("Invalid symbol! Try Again! ")
+  print "Player 1 Select Icon: 'X' or 'O': "
   symbol = gets.chomp.upcase
-  player = Player.new(i, symbol)
-  player_array << player
 end
+player_array << Player.new(1, symbol)
+player_array << Player.new(2, symbols.reject { |symbol1| symbol1 == symbol }[0])
 
 x = 0
 
